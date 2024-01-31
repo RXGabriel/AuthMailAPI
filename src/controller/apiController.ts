@@ -14,10 +14,10 @@ export const register = async (req: Request, res: Response) => {
             let newUser = await User.create({ email, password });
 
             res.status(201).json({ id: newUser.id });
-            return; // Adicionando return para evitar mais chamadas para res.json()
+            return; 
         } else {
             res.json({ error: 'E-mail já existe.' });
-            return; // Adicionando return para evitar mais chamadas para res.json()
+            return; 
         }
     }
 
@@ -35,7 +35,7 @@ export const login = async (req: Request, res: Response) => {
 
         if (user) {
             res.json({ status: true });
-            return; // Adicionando return para evitar mais chamadas para res.json()
+            return; 
         }
     }
 
